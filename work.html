@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Небезпечні космічні об'єкти</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+        /* Прибираєм відступи body и html */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* відео-фон */
+        #bg-video {
+            position: fixed;
+            /* відео на місці при прокрутці */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* накладка для читання тексту */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        /* Контент */
+        .content {
+            position: relative;
+            /* прокручування контенту */
+            z-index: 1;
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Блоки для теста прокрутки */
+        section {
+            margin-bottom: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Видео-фон -->
+    <video id="bg-video" autoplay muted loop>
+        <source src="space_video.mp4" type="video/mp4">
+
+    </video>
+
+
+    <table>
+        <caption>Топ 10 небезпечних космічних об'єктів</caption>
+        <thead>
+            <tr>
+                <th scope="col">Об'єкт</th>
+                <th scope="col">Рік відкриття</th>
+                <th scope="col">Хто відкрив</th>
+                <th scope="col">Потенційна небезпека</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">
+                    <img src="blackhole.jpg" alt="Чорна діра"
+                        style="width:80px; height: 60px; vertical-align:middle; margin-right:5px;">
+                    1. Чорна діра
+                </th>
+                <td>1915</td>
+                <td>Альберт Ейнштейн</td>
+                <td>Екстремальне спотворення простору-часу та дуже сильна гравітація,
+                    перейшовши радіус Шварцшильда шляху назад немає</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <img src="kvazar.jpg" alt="Квазар"
+                        style="width:80px; height: 60px; vertical-align:middle; margin-right:5px;">
+                    2. Квазари
+                </th>
+                <td>1963</td>
+                <td>Мартін Шмідт</td>
+                <td>Найяскравіші об'єкти у Всесвіті, живляться надмасивними чорними дірами, випускаючи енергію в тисячі
+                    разів більше,
+                    ніж Чумацький Шлях.</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <img src="pulsar.gif" alt="Пульсар"
+                        style="width:80px; height: 60px; vertical-align:middle; margin-right:5px;">
+                    3. Пульсари
+                </th>
+                <td>1967</td>
+                <td>Джоселін Белл Бернелл</td>
+                <td>Нейтронні зірки,
+                    що швидко обертаються,
+                    випромінюють радіохвилі з точністю атомного годинника. Їхні магнітні поля можуть бути небезпечні на
+                    відстані.</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <img src="hamma.jpg" alt="Гамма-сплески"
+                        style="width:80px; height: 60px; vertical-align:middle; margin-right:5px;">
+                    4. Гамма-сплески
+                </th>
+                <td>1967</td>
+                <td>Сплески виявлені випадково завдяки спутнику Vela</td>
+                <td>Короткі,
+                    але неймовірно потужні сплески гамма-випромінювання,
+                    здатні стерти життя планети на тисячах світлових років.</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <img src="supernova.jpg" alt="Наднова"
+                        style="width:80px; height: 60px; vertical-align:middle; margin-right:5px;">
+                    5. Наднові типу Ia
+                </th>
+                <td>Спостереження 1930-1940х</td>
+                <td>Фред Хойл та У. Фаулер</td>
+                <td>Вибухи білих карликів у подвійних системах виділяють стільки енергії,
+                    що можуть знищити планету в радіусі багатьох світлових років.</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <img src="magnitar.jpg" alt="Магнітар"
+                        style="width:80px; height: 60px; vertical-align:middle; margin-right:5px;">
+                    6. Магнітари
+                </th>
+                <td>1992</td>
+                <td>Роберт Дункан та Кристофер Томпсон</td>
+                <td>Нейтронні зірки з магнітним полем у трильйони разів сильніші за Земний. Можуть викликати сильні
+                    гамма-сплески та руйнувати магнітосфери планет.</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <img src="oumuamua.gif" alt="Оумуамуа"
+                        style="width:80px; height: 60px; vertical-align:middle; margin-right:5px;">
+                    7. Оумуамуа
+                </th>
+                <td>2017</td>
+                <td>Роберт В. Уебк</td>
+                <td>Міжзірковий астероїд. Його швидкість~315 000 км/год (≈ 87, 5 км/год) відносно Сонця Розміри:
+                    приблизно 230-800 м завдовжки і 35-167 м завширшки,
+                    з дуже витягнутою формою. Контакт із Землею викликав би неймовірні руйнування та колапс планети
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <img src="darkenergy.jpg" alt="Темная энергия"
+                        style="width:80px; height: 60px; vertical-align:middle; margin-right:5px;">
+                    8. Темна матерія та “темні галактики”
+                </th>
+                <td>1933</td>
+                <td>Фріц Цвіккі (помітив гравітаційні ефекти)</td>
+                <td>Об'єкти, що не випромінюють світло, можуть створювати гравітаційні аномалії та руйнувати галактики
+                    при зіткненнях.</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <img src="smallblack.webp" alt="Малі чорні діри"
+                        style="width:80px; height: 60px; vertical-align:middle; margin-right:5px;">
+                    9. Чорні діри малої маси поблизу”
+                </th>
+                <td>1916</td>
+                <td>Карл Шварцшильд</td>
+                <td>Малі неактивні чорні діри можуть пройти через Сонячну систему,
+                    дестабілізуючи орбіти планет.</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <img src="rentgen.jpg" alt="Рентгенівські подвійні"
+                        style="width:80px; height: 60px; vertical-align:middle; margin-right:5px;">
+                    10. Рентгенівські подвійні системи
+                </th>
+                <td>1971</td>
+                <td>Том Болтоном</td>
+                <td>Об'єкти типу Cygnus X-1 викидають потоки рентгенівського та гамма-випромінювання, потенційно
+                    смертельні для планет поблизу</td>
+            </tr>
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="7"></th>
+                <td colspan="7"></td>
+            </tr>
+        </tfoot>
+        </tbody>
+    </table>
+</body>
+
+</html>
